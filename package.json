@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --fix",
-    "test": "npx jest --coverage",
-    "test-live": "cross-env DEBUG_MODE=1 npx jest --coverage",
-    "build": "npx rimraf -rf ./dist ./lib ./esm && npx rollup --config",
+    "test": "jest --coverage",
+    "test-live": "cross-env DEBUG_MODE=1 jest --coverage",
+    "build": "rimraf -rf ./dist ./lib ./esm && rollup --config",
+    "ci": "run-s lint test build",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -27,6 +28,7 @@
     "jest": "^26.0.1",
     "jest-electron": "^0.1.12",
     "lint-staged": "^12.3.7",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.70.1",
     "rollup-plugin-babel": "^4.4.0",
