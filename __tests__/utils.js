@@ -3,3 +3,8 @@ export function createDiv() {
   document.body.appendChild(div);
   return div;
 }
+
+export function mount(parent, child) {
+  if (!parent) return;
+  parent.appendChild(child);
+}
